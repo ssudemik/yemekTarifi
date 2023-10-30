@@ -1,0 +1,123 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Kullanici.master.cs" Inherits="yemekTarifi.Kullanici" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="Kullanici.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+
+        .auto-style2 {
+            width: 142px;
+            text-align: center;
+            background-color: #FFFFFF;
+        }
+
+        .auto-style3 {
+            width: 159px;
+            text-align: center;
+            background-color: #FFFFFF;
+        }
+
+        .auto-style4 {
+            text-align: center;
+            background-color: #FFFFFF;
+        }
+
+        .auto-style5 {
+            height: 150px;
+            width: 1000px;
+        }
+
+        .auto-style6 {
+            text-align: center;
+        }
+
+        .auto-style7 {
+            color: #CC0099;
+        }
+
+        .auto-style8 {
+            color: #000000;
+        }
+
+        .auto-style9 {
+            margin-right: 0px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <div style="margin-left: 250px; background-color: #fcdae9;" class="auto-style5">
+            <div id="sliderContainer">
+
+                <asp:Image ID="Image1" runat="server" CssClass="auto-style9" Height="153px" ImageUrl="~/Images/4.jpg" Width="998px" />
+
+            </div>
+
+        </div>
+
+        <div style="margin-left: 250px; width: 1000px; height: 20px;">&nbsp </div>
+
+        <div style="margin-left: 420px; width: 700px; height: 30px; background-color: #fff">
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style2"><strong><a href="AnaSayfa.aspx">Ana Sayfa</a></strong></td>
+                    <td class="auto-style3"><strong><a href="GununYemegi.aspx">Günün Yemeği</a></strong></td>
+                    <td class="auto-style4"><strong><a href="TarifOner.aspx">Tarif Öner</a></strong></td>
+                    <td class="auto-style4"><strong><a href="Hakkimizda.aspx">Hakkımızda</a></strong></td>
+                    <td class="auto-style4"><strong><a href="iletisim.aspx">İletişim</a></strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="margin-left: 250px; width: 1000px; height: 20px;">&nbsp </div>
+
+        <div style="margin-left: 250px; width: 1000px; height: auto;">
+
+            <div style="width: 210px; float: left; height: auto; background-color: #fcdae9; margin-left: 0px;">
+                <div class="auto-style6">
+                    <span class="auto-style7">
+                        <strong>KATEGORİLER</strong></span><br />
+                    <br />
+                    <strong>
+                </div>
+                <div class="auto-style6">
+
+                    <asp:DataList ID="DataList1" runat="server" Width="209px">
+                        <ItemTemplate>
+                            <div style="border: medium solid #FFFFFF">
+                                <strong>
+                                    <a href="KategoriDetay.aspx?Kategoriid=<%# Eval("Kategoriid")%>">
+                                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("KategoriAd") %>' CssClass="auto-style8"></asp:Label></a>
+                                    &nbsp;(
+                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("KategoriAdet") %>'></asp:Label>
+                                    )</strong>
+                            </div>
+                        </ItemTemplate>
+                    </asp:DataList>
+                </div>
+                </strong>
+            </div>
+            <div style="width: 760px; float: left; height: auto; background-color: #fcdae9; margin-left: 30px;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+        </div>
+
+    </form>
+</body>
+</html>
+
+
+
+
